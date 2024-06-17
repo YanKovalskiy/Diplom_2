@@ -26,9 +26,10 @@ class HTTPClient:
     def send_request(self, method, endpoint, **kwargs):
         url = f'{self.url}{endpoint}'
         response = requests.request(method=method, url=url,  **kwargs)
-        logger.info(f'METHOD = {method}')
         logger.info(f'URL = {url}')
+        logger.info(f'METHOD = {method}')
         logger.info(f'PAYLOAD = {json.dumps(kwargs, indent=4)}')
         logger.info(f'STATUS_CODE = {response.status_code}')
         logger.info(f'RESPONSE = {json.dumps(response.json(), indent=4)}')
+        logger.info('='*40)
         return response

@@ -12,15 +12,14 @@ class UserEndpoints(Endpoint):
     @property
     @allure.step('Получаем accessToken пользователя')
     def access_token(self):
-        return self.response.json()['accessToken']
+        return self.response.json().get('accessToken', None)
 
     @allure.step('Создаем пользователя')
     def create_user(self, payload):
         self.response = self.http_client.send_request(HTTPMethods.POST, self.REG_USER_ENDPOINT, json=payload)
 
     @allure.step('Удаляем пользователя')
-    def delete_user(self):
-        headers = {"Authorization": self.access_token}
+    def delete_user(self, headers):
         self.response = self.http_client.send_request(HTTPMethods.DELETE, self.USER_ENDPOINT, headers=headers)
 
     @allure.step('Логинимся под пользователем')

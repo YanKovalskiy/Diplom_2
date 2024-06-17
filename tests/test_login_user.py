@@ -1,11 +1,15 @@
 import allure
 import pytest
+import logging
+
+logger = logging.getLogger(__name__)
 
 
 class TestLoginUser:
 
     @allure.title('Логин под существующим пользователем')
-    def test_login_by_existing_users(self, user_endpoints, new_user, payload_for_login):
+    def test_login_by_existing_users(self, new_user, user_endpoints, payload_for_login):
+        logger.info('+=test_login_by_existing_users=+')
         user_endpoints.login_user(payload_for_login)
         user_endpoints.check_status_code_is_(200)
         user_endpoints.check_response_field_success_is_(True)
@@ -15,7 +19,8 @@ class TestLoginUser:
         'required_field',
         ('email', 'password')
     )
-    def test_login_with_incorrect_user_data(self, user_endpoints, new_user, payload_for_login, required_field):
+    def test_login_with_incorrect_user_data(self, new_user, user_endpoints, payload_for_login, required_field):
+        logger.info(f'+=test_login_with_incorrect_user_data[{required_field}]=+')
         payload_for_login[required_field] = required_field
         user_endpoints.login_user(payload_for_login)
         user_endpoints.check_status_code_is_(401)
