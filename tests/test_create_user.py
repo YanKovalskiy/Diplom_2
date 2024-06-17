@@ -9,9 +9,7 @@ class TestCreateUser:
         user_endpoints.create_user(payload_for_create_user)
         user_endpoints.check_status_code_is_(200)
         user_endpoints.check_response_field_success_is_(True)
-
-        headers = {"Authorization": user_endpoints.access_token}
-        user_endpoints.delete_user(headers)
+        user_endpoints.delete_user()
 
     @allure.title('Создание пользователя, который уже зарегистрирован')
     def test_create_already_registered_user(self, new_user, user_endpoints, payload_for_create_user):

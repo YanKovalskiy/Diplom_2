@@ -36,5 +36,4 @@ def new_user(user_endpoints, payload_for_create_user):
 
     yield
 
-    headers = {"Authorization": access_token}
-    user_endpoints.delete_user(headers)
+    user_endpoints.delete_user()
