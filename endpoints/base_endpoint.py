@@ -16,10 +16,10 @@ class Endpoint:
             logger.info(f'Код ответа - {self.response.status_code}')
             assert self.response.status_code == status_code
 
-    def check_response_field(self, field, response_text):
-        with allure.step(f'Проверяем значение поля [{field}] в ответе'):
-            assert self.response.json()[field] == response_text
+    def check_response_field_success_is_(self, value):
+        with allure.step("Проверяем значение поля 'success' в ответе"):
+            assert self.response.json()['success'] == value
 
-    def check_in_response_is_field_(self, field):
-        with allure.step(f'Проверяем есть ли в ответе поле - {field}'):
-            assert field in self.response.json()
+    def check_response_field_message_is_(self, value):
+        with allure.step("Проверяем значение поля 'message' в ответе"):
+            assert self.response.json()['message'] == value

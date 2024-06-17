@@ -20,11 +20,19 @@ def payload_for_create_user():
     }
     return payload
 
+@pytest.fixture()
+def payload_for_login(payload_for_create_user):
+    payload = {
+        "email": payload_for_create_user['email'],
+        "password": payload_for_create_user['password']
+    }
+    return payload
+
 
 @pytest.fixture()
 def new_user(user_endpoints, payload_for_create_user):
     user_endpoints.create_user(payload_for_create_user)
-    access_token = user_endpoints.get_access_token()
+    access_token = user_endpoints.access_token
 
     yield
 
