@@ -17,7 +17,7 @@ def user_endpoints():
 def payload_for_create_user():
     fake = Faker()
     payload = {
-        "email": f'Y2024{fake.email()}',
+        "email": f'yva2024{fake.email()}',
         "password": fake.password(),
         "name": fake.user_name()
     }
