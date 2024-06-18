@@ -8,6 +8,7 @@ class TestGetUserOrders:
 
     @allure.title('Получение заказов авторизированного пользователя')
     def test_get_user_orders(self, new_user, user_endpoints, order_endpoints, payload_for_create_order):
+        logger.info(f'+=test_get_user_orders=+')
         headers = {"Authorization": user_endpoints.access_token}
         order_endpoints.create_order(headers, payload_for_create_order)
         hash_order = order_endpoints.hash_order
@@ -18,7 +19,8 @@ class TestGetUserOrders:
         order_endpoints.check_order_hash_is_(hash_order)
 
     @allure.title('Получение заказов пользователя без авторизации')
-    def test_get_user_orders(self, order_endpoints):
+    def test_get_user_orders_without_authorization(self, order_endpoints):
+        logger.info(f'+=test_get_user_orders_without_authorization=+')
         order_endpoints.get_user_orders(None)
 
         order_endpoints.check_status_code_is_(401)
