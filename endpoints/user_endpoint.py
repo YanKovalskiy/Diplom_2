@@ -36,8 +36,12 @@ class UserEndpoints(Endpoint):
     def login_user(self, payload):
         self.response = self.http_client.send_request(HTTPMethods.POST, self.LOGIN_USER_ENDPOINT, json=payload)
 
-    @allure.step('Обновляем данные пользователя')
+    @allure.step('Обновляем данные авторизированного пользователя')
     def update_user_data(self, payload):
         headers = {"Authorization": self.access_token}
         self.response = self.http_client.send_request(HTTPMethods.PATCH, self.USER_ENDPOINT,
                                                       headers=headers, json=payload)
+
+    @allure.step('Обновляем данные пользователя без авторизации')
+    def update_user_data_without_authorization(self, payload):
+        self.response = self.http_client.send_request(HTTPMethods.PATCH, self.USER_ENDPOINT, json=payload)

@@ -14,6 +14,11 @@ def user_endpoints():
 
 
 @pytest.fixture()
+def email_existing_user():
+    return 'yankovskiy_8@gmail.com'
+
+
+@pytest.fixture()
 def payload_for_create_user():
     fake = Faker()
     payload = {
