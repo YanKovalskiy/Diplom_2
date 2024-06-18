@@ -1,13 +1,14 @@
 import allure
-import logging
 
 from scr.http_client import HTTPClient
+from scr.http_client import HTTPMethods
 from config import URL
 
 
 class Endpoint:
     response = None
     http_client = HTTPClient(URL)
+    http_methods = HTTPMethods
 
     def check_status_code_is_(self, status_code):
         with allure.step(f'Проверяем код ответа. Код ответа - {self.response.status_code}'):

@@ -16,7 +16,6 @@ class TestCreateUser:
         user_endpoints.check_user_email_is_(payload_for_create_user['email'])
         user_endpoints.check_user_name_is_(payload_for_create_user['name'])
 
-
         headers = {"Authorization": user_endpoints.access_token}
         user_endpoints.delete_user(headers)
 

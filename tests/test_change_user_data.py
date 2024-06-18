@@ -56,6 +56,7 @@ class TestChangeUserData:
 
     @allure.title('Изменение e-mail пользователя на уже существующий в базе')
     def test_change_email_authorized_user_to_existing_email(self, new_user, user_endpoints, email_existing_user):
+        logger.info(f'+=test_change_email_authorized_user_to_existing_email=+')
         payload = {
             "email": email_existing_user,
             "name": user_endpoints.user_name

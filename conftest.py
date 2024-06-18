@@ -1,9 +1,12 @@
 import pytest
 import logging
 
+from random import randint
 from faker import Faker
 
-from endpoints.user_endpoint import UserEndpoints
+from endpoints.user_endpoints import UserEndpoints
+from endpoints.order_endpoints import OrderEndpoints
+from endpoints.ingedient_endpoints import IngredientEndpoints
 
 logger = logging.getLogger(__name__)
 
@@ -11,6 +14,16 @@ logger = logging.getLogger(__name__)
 @pytest.fixture()
 def user_endpoints():
     return UserEndpoints()
+
+
+@pytest.fixture()
+def order_endpoints():
+    return OrderEndpoints()
+
+
+@pytest.fixture()
+def ingredient_endpoints():
+    return IngredientEndpoints()
 
 
 @pytest.fixture()
@@ -35,6 +48,14 @@ def payload_for_login(payload_for_create_user):
         "email": payload_for_create_user['email'],
         "password": payload_for_create_user['password']
     }
+    return payload
+
+
+@pytest.fixture()
+def payload_for_create_order(ingredient_endpoints):
+    ingredient = ingredient_endpoints.ingredients
+    ingredient_id_list = [ingredient[randint(0, len(ingredient)-1)]['_id'] for _ in range(3)]
+    payload = {"ingredients": ingredient_id_list}
     return payload
 
 
