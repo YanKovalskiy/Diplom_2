@@ -7,9 +7,9 @@ logger = logging.getLogger(__name__)
 class TestGetUserOrders:
 
     @allure.title('Получение заказов авторизированного пользователя')
-    def test_get_user_orders(self, new_user, user_endpoints, order_endpoints, payload_for_create_order):
+    def test_get_user_orders(self, new_user, order_endpoints, payload_for_create_order):
         logger.info(f'+=test_get_user_orders=+')
-        headers = {"Authorization": user_endpoints.access_token}
+        headers = {"Authorization": new_user['access_token']}
         order_endpoints.create_order(headers, payload_for_create_order)
         hash_order = order_endpoints.hash_order
         order_endpoints.get_user_orders(headers)

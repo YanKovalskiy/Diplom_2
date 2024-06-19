@@ -64,8 +64,14 @@ def new_user(user_endpoints, payload_for_create_user):
     logger.info('+=fixture - new_user=+')
     user_endpoints.create_user(payload_for_create_user)
     access_token = user_endpoints.access_token
+    user = {
+        "email": payload_for_create_user['email'],
+        "password": payload_for_create_user['password'],
+        "name": payload_for_create_user['name'],
+        "access_token": access_token
+    }
 
-    yield
+    yield user
 
     if access_token is not None:
         headers = {"Authorization": access_token}
