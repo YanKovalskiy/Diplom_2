@@ -13,16 +13,6 @@ class UserEndpoints(Endpoint):
     def access_token(self):
         return self.response.json().get('accessToken', None)
 
-    @property
-    @allure.step('Получаем email пользователя')
-    def user_email(self):
-        return self.response.json()['user']['email']
-
-    @property
-    @allure.step('Получаем имя пользователя')
-    def user_name(self):
-        return self.response.json()['user']['name']
-
     @allure.step('Создаем пользователя')
     def create_user(self, payload):
         self.response = self.http_client.send_request(self.http_methods.POST, self.REG_USER_ENDPOINT, json=payload)

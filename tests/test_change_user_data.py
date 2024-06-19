@@ -19,8 +19,8 @@ class TestChangeUserData:
     )
     def test_change_authorized_user_data(self, new_user, user_endpoints, new_email, new_name):
         logger.info(f'+=test_change_authorized_user_data[{new_email}, {new_name}]=+')
-        email = user_endpoints.user_email if new_email == '' else new_email
-        name = user_endpoints.user_name if new_name == '' else new_name
+        email = new_user['email'] if new_email == '' else new_email
+        name = new_user['name'] if new_name == '' else new_name
         payload = {
             "email": email,
             "name": name
@@ -43,8 +43,8 @@ class TestChangeUserData:
     )
     def test_change_not_authorized_user_data(self, new_user, user_endpoints, new_email, new_name):
         logger.info(f'+=test_change_authorized_user_data[{new_email}, {new_name}]=+')
-        email = user_endpoints.user_email if new_email == '' else new_email
-        name = user_endpoints.user_name if new_name == '' else new_name
+        email = new_user['email'] if new_email == '' else new_email
+        name = new_user['name'] if new_name == '' else new_name
         payload = {
             "email": email,
             "name": name
@@ -59,7 +59,7 @@ class TestChangeUserData:
         logger.info(f'+=test_change_email_authorized_user_to_existing_email=+')
         payload = {
             "email": email_existing_user,
-            "name": user_endpoints.user_name
+            "name": new_user['name']
         }
         user_endpoints.update_user_data(payload)
         user_endpoints.check_status_code_is_(403)
