@@ -40,7 +40,9 @@ class TestCreateOrder:
         logger.info(f'+=test_create_order_with_incorrect_hash_ingredients=+')
         headers = {"Authorization": new_user['access_token']}
         payload = {
-            "ingredients": ["incorrect_hash", "609646e4dc916e00276b2870"]
+            "ingredients": ["60d3b41abdacab0026a733c6", "609646e4dc916e00276b2870"]
         }
         order_endpoints.create_order(headers, payload)
-        order_endpoints.check_status_code_is_(500)
+        order_endpoints.check_status_code_is_(400)
+        order_endpoints.check_response_field_success_is_(False)
+        order_endpoints.check_response_field_message_is_('One or more ids provided are incorrect')
