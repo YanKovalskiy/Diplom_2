@@ -13,7 +13,8 @@ class OrderEndpoints(Endpoint):
 
     def check_ingredients_in_order(self, ingredients):
         for ingredient_dict in self.response.json()['order']['ingredients']:
-            with allure.step(f"Проверяем наличие ингредиента в заказе id={(ingredient_dict['_id'])}, name='{(ingredient_dict['name'])}'"):
+            with allure.step(f"Проверяем наличие ингредиента в заказе id={(ingredient_dict['_id'])}, "
+                             f"name='{(ingredient_dict['name'])}'"):
                 assert ingredient_dict['_id'] in ingredients
 
     def check_order_hash_is_(self, hash_order):
