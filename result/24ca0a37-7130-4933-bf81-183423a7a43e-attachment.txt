@@ -1,0 +1,12 @@
+[32mINFO    [0m test_get_user_orders:test_get_user_orders.py:23 +=test_get_user_orders_without_authorization=+
+[32mINFO    [0m scr.http_client:http_client.py:29 URL = https://stellarburgers.nomoreparties.site/api/orders
+[32mINFO    [0m scr.http_client:http_client.py:30 METHOD = HTTPMethods.GET
+[32mINFO    [0m scr.http_client:http_client.py:31 PAYLOAD = {
+    "headers": null
+}
+[32mINFO    [0m scr.http_client:http_client.py:32 STATUS_CODE = 401
+[32mINFO    [0m scr.http_client:http_client.py:33 RESPONSE = {
+    "success": false,
+    "message": "You should be authorised"
+}
+[32mINFO    [0m scr.http_client:http_client.py:34 ========================================

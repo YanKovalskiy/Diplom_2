@@ -1,0 +1,49 @@
+[32mINFO    [0m conftest:conftest.py:64 +=fixture - new_user=+
+[32mINFO    [0m scr.http_client:http_client.py:29 URL = https://stellarburgers.nomoreparties.site/api/auth/register
+[32mINFO    [0m scr.http_client:http_client.py:30 METHOD = HTTPMethods.POST
+[32mINFO    [0m scr.http_client:http_client.py:31 PAYLOAD = {
+    "json": {
+        "email": "yva2024aviladeborah@example.net",
+        "password": "y#)5hU*i_e",
+        "name": "sanchezscott"
+    }
+}
+[32mINFO    [0m scr.http_client:http_client.py:32 STATUS_CODE = 200
+[32mINFO    [0m scr.http_client:http_client.py:33 RESPONSE = {
+    "success": true,
+    "user": {
+        "email": "yva2024aviladeborah@example.net",
+        "name": "sanchezscott"
+    },
+    "accessToken": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NzkxNDg0OWVkMjgwMDAxYjQ0YWRmNyIsImlhdCI6MTcxOTIxMTE0MCwiZXhwIjoxNzE5MjEyMzQwfQ.WNjtqjK7evjgkakIvDmffBYD115rWPyM_p_hUabBSWk",
+    "refreshToken": "5ccb9e9c75aa45b486093f80303cfe68408d4c48012fb8890c163f66d3d1ac73b7e04978e235e314"
+}
+[32mINFO    [0m scr.http_client:http_client.py:34 ========================================
+[32mINFO    [0m test_create_order:test_create_order.py:31 +=test_create_order_without_ingredients=+
+[32mINFO    [0m scr.http_client:http_client.py:29 URL = https://stellarburgers.nomoreparties.site/api/orders
+[32mINFO    [0m scr.http_client:http_client.py:30 METHOD = HTTPMethods.POST
+[32mINFO    [0m scr.http_client:http_client.py:31 PAYLOAD = {
+    "headers": {
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NzkxNDg0OWVkMjgwMDAxYjQ0YWRmNyIsImlhdCI6MTcxOTIxMTE0MCwiZXhwIjoxNzE5MjEyMzQwfQ.WNjtqjK7evjgkakIvDmffBYD115rWPyM_p_hUabBSWk"
+    },
+    "json": null
+}
+[32mINFO    [0m scr.http_client:http_client.py:32 STATUS_CODE = 400
+[32mINFO    [0m scr.http_client:http_client.py:33 RESPONSE = {
+    "success": false,
+    "message": "Ingredient ids must be provided"
+}
+[32mINFO    [0m scr.http_client:http_client.py:34 ========================================
+[32mINFO    [0m scr.http_client:http_client.py:29 URL = https://stellarburgers.nomoreparties.site/api/auth/user
+[32mINFO    [0m scr.http_client:http_client.py:30 METHOD = HTTPMethods.DELETE
+[32mINFO    [0m scr.http_client:http_client.py:31 PAYLOAD = {
+    "headers": {
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NzkxNDg0OWVkMjgwMDAxYjQ0YWRmNyIsImlhdCI6MTcxOTIxMTE0MCwiZXhwIjoxNzE5MjEyMzQwfQ.WNjtqjK7evjgkakIvDmffBYD115rWPyM_p_hUabBSWk"
+    }
+}
+[32mINFO    [0m scr.http_client:http_client.py:32 STATUS_CODE = 202
+[32mINFO    [0m scr.http_client:http_client.py:33 RESPONSE = {
+    "success": true,
+    "message": "User successfully removed"
+}
+[32mINFO    [0m scr.http_client:http_client.py:34 ========================================

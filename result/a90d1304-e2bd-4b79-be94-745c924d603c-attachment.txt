@@ -1,0 +1,16 @@
+[32mINFO    [0m test_create_user:test_create_user.py:37 +=test_create_user_without_fill_one_of_required_fields[name]=+
+[32mINFO    [0m scr.http_client:http_client.py:29 URL = https://stellarburgers.nomoreparties.site/api/auth/register
+[32mINFO    [0m scr.http_client:http_client.py:30 METHOD = HTTPMethods.POST
+[32mINFO    [0m scr.http_client:http_client.py:31 PAYLOAD = {
+    "json": {
+        "email": "yva2024stephenhaynes@example.net",
+        "password": "76$F0Rm+UA",
+        "name": ""
+    }
+}
+[32mINFO    [0m scr.http_client:http_client.py:32 STATUS_CODE = 403
+[32mINFO    [0m scr.http_client:http_client.py:33 RESPONSE = {
+    "success": false,
+    "message": "Email, password and name are required fields"
+}
+[32mINFO    [0m scr.http_client:http_client.py:34 ========================================
