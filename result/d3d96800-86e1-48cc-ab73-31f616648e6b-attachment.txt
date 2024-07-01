@@ -1,0 +1,54 @@
+[32mINFO    [0m conftest:conftest.py:64 +=fixture - new_user=+
+[32mINFO    [0m scr.http_client:http_client.py:29 URL = https://stellarburgers.nomoreparties.site/api/auth/register
+[32mINFO    [0m scr.http_client:http_client.py:30 METHOD = HTTPMethods.POST
+[32mINFO    [0m scr.http_client:http_client.py:31 PAYLOAD = {
+    "json": {
+        "email": "yva2024melissa69@example.net",
+        "password": "y)E7CKbdQR",
+        "name": "jamiemullen"
+    }
+}
+[32mINFO    [0m scr.http_client:http_client.py:32 STATUS_CODE = 200
+[32mINFO    [0m scr.http_client:http_client.py:33 RESPONSE = {
+    "success": true,
+    "user": {
+        "email": "yva2024melissa69@example.net",
+        "name": "jamiemullen"
+    },
+    "accessToken": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NzkxNDg1OWVkMjgwMDAxYjQ0YWRmOSIsImlhdCI6MTcxOTIxMTE0MSwiZXhwIjoxNzE5MjEyMzQxfQ.Uh6LArMUw-BANI1OBJkBryaFMZD5mA_vPEnWKCmb7m8",
+    "refreshToken": "22bc11a6f6542e7b6469d82f0b37ea99307e411444a1111c3cca9f0809c1581db0d2030890dc5627"
+}
+[32mINFO    [0m scr.http_client:http_client.py:34 ========================================
+[32mINFO    [0m test_create_order:test_create_order.py:40 +=test_create_order_with_incorrect_hash_ingredients=+
+[32mINFO    [0m scr.http_client:http_client.py:29 URL = https://stellarburgers.nomoreparties.site/api/orders
+[32mINFO    [0m scr.http_client:http_client.py:30 METHOD = HTTPMethods.POST
+[32mINFO    [0m scr.http_client:http_client.py:31 PAYLOAD = {
+    "headers": {
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NzkxNDg1OWVkMjgwMDAxYjQ0YWRmOSIsImlhdCI6MTcxOTIxMTE0MSwiZXhwIjoxNzE5MjEyMzQxfQ.Uh6LArMUw-BANI1OBJkBryaFMZD5mA_vPEnWKCmb7m8"
+    },
+    "json": {
+        "ingredients": [
+            "60d3b41abdacab0026a733c6",
+            "609646e4dc916e00276b2870"
+        ]
+    }
+}
+[32mINFO    [0m scr.http_client:http_client.py:32 STATUS_CODE = 400
+[32mINFO    [0m scr.http_client:http_client.py:33 RESPONSE = {
+    "success": false,
+    "message": "One or more ids provided are incorrect"
+}
+[32mINFO    [0m scr.http_client:http_client.py:34 ========================================
+[32mINFO    [0m scr.http_client:http_client.py:29 URL = https://stellarburgers.nomoreparties.site/api/auth/user
+[32mINFO    [0m scr.http_client:http_client.py:30 METHOD = HTTPMethods.DELETE
+[32mINFO    [0m scr.http_client:http_client.py:31 PAYLOAD = {
+    "headers": {
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NzkxNDg1OWVkMjgwMDAxYjQ0YWRmOSIsImlhdCI6MTcxOTIxMTE0MSwiZXhwIjoxNzE5MjEyMzQxfQ.Uh6LArMUw-BANI1OBJkBryaFMZD5mA_vPEnWKCmb7m8"
+    }
+}
+[32mINFO    [0m scr.http_client:http_client.py:32 STATUS_CODE = 202
+[32mINFO    [0m scr.http_client:http_client.py:33 RESPONSE = {
+    "success": true,
+    "message": "User successfully removed"
+}
+[32mINFO    [0m scr.http_client:http_client.py:34 ========================================

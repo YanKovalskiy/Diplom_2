@@ -1,0 +1,52 @@
+[32mINFO    [0m conftest:conftest.py:64 +=fixture - new_user=+
+[32mINFO    [0m scr.http_client:http_client.py:29 URL = https://stellarburgers.nomoreparties.site/api/auth/register
+[32mINFO    [0m scr.http_client:http_client.py:30 METHOD = HTTPMethods.POST
+[32mINFO    [0m scr.http_client:http_client.py:31 PAYLOAD = {
+    "json": {
+        "email": "yva2024lhamilton@example.org",
+        "password": "7e1P7Tj3D)",
+        "name": "johnjoseph"
+    }
+}
+[32mINFO    [0m scr.http_client:http_client.py:32 STATUS_CODE = 200
+[32mINFO    [0m scr.http_client:http_client.py:33 RESPONSE = {
+    "success": true,
+    "user": {
+        "email": "yva2024lhamilton@example.org",
+        "name": "johnjoseph"
+    },
+    "accessToken": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NzkxNDgwOWVkMjgwMDAxYjQ0YWRmMiIsImlhdCI6MTcxOTIxMTEzNiwiZXhwIjoxNzE5MjEyMzM2fQ.QZ2imXNUcdYLqEjulyR25wFp0cp8553kIdC2Q02VL-4",
+    "refreshToken": "6f499f189b77f9afdbbce66fc95af05edd6bea77cbee37086638dea45811539ff7b0493e8b2e7cf2"
+}
+[32mINFO    [0m scr.http_client:http_client.py:34 ========================================
+[32mINFO    [0m test_change_user_data:test_change_user_data.py:59 +=test_change_email_authorized_user_to_existing_email=+
+[32mINFO    [0m scr.http_client:http_client.py:29 URL = https://stellarburgers.nomoreparties.site/api/auth/user
+[32mINFO    [0m scr.http_client:http_client.py:30 METHOD = HTTPMethods.PATCH
+[32mINFO    [0m scr.http_client:http_client.py:31 PAYLOAD = {
+    "headers": {
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NzkxNDgwOWVkMjgwMDAxYjQ0YWRmMiIsImlhdCI6MTcxOTIxMTEzNiwiZXhwIjoxNzE5MjEyMzM2fQ.QZ2imXNUcdYLqEjulyR25wFp0cp8553kIdC2Q02VL-4"
+    },
+    "json": {
+        "email": "yankovskiy_8@gmail.com",
+        "name": "johnjoseph"
+    }
+}
+[32mINFO    [0m scr.http_client:http_client.py:32 STATUS_CODE = 403
+[32mINFO    [0m scr.http_client:http_client.py:33 RESPONSE = {
+    "success": false,
+    "message": "User with such email already exists"
+}
+[32mINFO    [0m scr.http_client:http_client.py:34 ========================================
+[32mINFO    [0m scr.http_client:http_client.py:29 URL = https://stellarburgers.nomoreparties.site/api/auth/user
+[32mINFO    [0m scr.http_client:http_client.py:30 METHOD = HTTPMethods.DELETE
+[32mINFO    [0m scr.http_client:http_client.py:31 PAYLOAD = {
+    "headers": {
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NzkxNDgwOWVkMjgwMDAxYjQ0YWRmMiIsImlhdCI6MTcxOTIxMTEzNiwiZXhwIjoxNzE5MjEyMzM2fQ.QZ2imXNUcdYLqEjulyR25wFp0cp8553kIdC2Q02VL-4"
+    }
+}
+[32mINFO    [0m scr.http_client:http_client.py:32 STATUS_CODE = 202
+[32mINFO    [0m scr.http_client:http_client.py:33 RESPONSE = {
+    "success": true,
+    "message": "User successfully removed"
+}
+[32mINFO    [0m scr.http_client:http_client.py:34 ========================================

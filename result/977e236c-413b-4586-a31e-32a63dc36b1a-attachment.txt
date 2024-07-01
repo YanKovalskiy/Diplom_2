@@ -1,0 +1,49 @@
+[32mINFO    [0m conftest:conftest.py:64 +=fixture - new_user=+
+[32mINFO    [0m scr.http_client:http_client.py:29 URL = https://stellarburgers.nomoreparties.site/api/auth/register
+[32mINFO    [0m scr.http_client:http_client.py:30 METHOD = HTTPMethods.POST
+[32mINFO    [0m scr.http_client:http_client.py:31 PAYLOAD = {
+    "json": {
+        "email": "yva2024christopher52@example.com",
+        "password": "Ze0I8pm+!&",
+        "name": "christophermiller"
+    }
+}
+[32mINFO    [0m scr.http_client:http_client.py:32 STATUS_CODE = 200
+[32mINFO    [0m scr.http_client:http_client.py:33 RESPONSE = {
+    "success": true,
+    "user": {
+        "email": "yva2024christopher52@example.com",
+        "name": "christophermiller"
+    },
+    "accessToken": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NzkxNDhkOWVkMjgwMDAxYjQ0YWUwNSIsImlhdCI6MTcxOTIxMTE0OSwiZXhwIjoxNzE5MjEyMzQ5fQ.4GE3uQVSLQvKDWk9qZ2D8kYmcVLHCaAxyduT5xnobco",
+    "refreshToken": "a81f1500a747b257b6e23df2faaded7892c962671ef3a556cb26f8e262c8bac8d956a90acc62e8ab"
+}
+[32mINFO    [0m scr.http_client:http_client.py:34 ========================================
+[32mINFO    [0m test_login_user:test_login_user.py:23 +=test_login_with_incorrect_user_data[email]=+
+[32mINFO    [0m scr.http_client:http_client.py:29 URL = https://stellarburgers.nomoreparties.site/api/auth/login
+[32mINFO    [0m scr.http_client:http_client.py:30 METHOD = HTTPMethods.POST
+[32mINFO    [0m scr.http_client:http_client.py:31 PAYLOAD = {
+    "json": {
+        "email": "email",
+        "password": "Ze0I8pm+!&"
+    }
+}
+[32mINFO    [0m scr.http_client:http_client.py:32 STATUS_CODE = 401
+[32mINFO    [0m scr.http_client:http_client.py:33 RESPONSE = {
+    "success": false,
+    "message": "email or password are incorrect"
+}
+[32mINFO    [0m scr.http_client:http_client.py:34 ========================================
+[32mINFO    [0m scr.http_client:http_client.py:29 URL = https://stellarburgers.nomoreparties.site/api/auth/user
+[32mINFO    [0m scr.http_client:http_client.py:30 METHOD = HTTPMethods.DELETE
+[32mINFO    [0m scr.http_client:http_client.py:31 PAYLOAD = {
+    "headers": {
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NzkxNDhkOWVkMjgwMDAxYjQ0YWUwNSIsImlhdCI6MTcxOTIxMTE0OSwiZXhwIjoxNzE5MjEyMzQ5fQ.4GE3uQVSLQvKDWk9qZ2D8kYmcVLHCaAxyduT5xnobco"
+    }
+}
+[32mINFO    [0m scr.http_client:http_client.py:32 STATUS_CODE = 202
+[32mINFO    [0m scr.http_client:http_client.py:33 RESPONSE = {
+    "success": true,
+    "message": "User successfully removed"
+}
+[32mINFO    [0m scr.http_client:http_client.py:34 ========================================

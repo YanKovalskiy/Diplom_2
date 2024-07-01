@@ -1,0 +1,49 @@
+[32mINFO    [0m conftest:conftest.py:64 +=fixture - new_user=+
+[32mINFO    [0m scr.http_client:http_client.py:29 URL = https://stellarburgers.nomoreparties.site/api/auth/register
+[32mINFO    [0m scr.http_client:http_client.py:30 METHOD = HTTPMethods.POST
+[32mINFO    [0m scr.http_client:http_client.py:31 PAYLOAD = {
+    "json": {
+        "email": "yva2024anthonybutler@example.com",
+        "password": "9pU1D0px@k",
+        "name": "lhoward"
+    }
+}
+[32mINFO    [0m scr.http_client:http_client.py:32 STATUS_CODE = 200
+[32mINFO    [0m scr.http_client:http_client.py:33 RESPONSE = {
+    "success": true,
+    "user": {
+        "email": "yva2024anthonybutler@example.com",
+        "name": "lhoward"
+    },
+    "accessToken": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NzkxNDdlOWVkMjgwMDAxYjQ0YWRlZSIsImlhdCI6MTcxOTIxMTEzNCwiZXhwIjoxNzE5MjEyMzM0fQ.BwGtqbR0FdbSmjb0eMYYZglCzp3t3OXex3aNOadGn6A",
+    "refreshToken": "0a53fbe35b9971a4a2654e8a6d44040e5a59c87a7d6710cd0810ae288081969a95632defb14fd4ef"
+}
+[32mINFO    [0m scr.http_client:http_client.py:34 ========================================
+[32mINFO    [0m test_change_user_data:test_change_user_data.py:45 +=test_change_authorized_user_data[, NewUserName]=+
+[32mINFO    [0m scr.http_client:http_client.py:29 URL = https://stellarburgers.nomoreparties.site/api/auth/user
+[32mINFO    [0m scr.http_client:http_client.py:30 METHOD = HTTPMethods.PATCH
+[32mINFO    [0m scr.http_client:http_client.py:31 PAYLOAD = {
+    "json": {
+        "email": "yva2024anthonybutler@example.com",
+        "name": "NewUserName"
+    }
+}
+[32mINFO    [0m scr.http_client:http_client.py:32 STATUS_CODE = 401
+[32mINFO    [0m scr.http_client:http_client.py:33 RESPONSE = {
+    "success": false,
+    "message": "You should be authorised"
+}
+[32mINFO    [0m scr.http_client:http_client.py:34 ========================================
+[32mINFO    [0m scr.http_client:http_client.py:29 URL = https://stellarburgers.nomoreparties.site/api/auth/user
+[32mINFO    [0m scr.http_client:http_client.py:30 METHOD = HTTPMethods.DELETE
+[32mINFO    [0m scr.http_client:http_client.py:31 PAYLOAD = {
+    "headers": {
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NzkxNDdlOWVkMjgwMDAxYjQ0YWRlZSIsImlhdCI6MTcxOTIxMTEzNCwiZXhwIjoxNzE5MjEyMzM0fQ.BwGtqbR0FdbSmjb0eMYYZglCzp3t3OXex3aNOadGn6A"
+    }
+}
+[32mINFO    [0m scr.http_client:http_client.py:32 STATUS_CODE = 202
+[32mINFO    [0m scr.http_client:http_client.py:33 RESPONSE = {
+    "success": true,
+    "message": "User successfully removed"
+}
+[32mINFO    [0m scr.http_client:http_client.py:34 ========================================
